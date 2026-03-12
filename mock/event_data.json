@@ -1,14 +1,5 @@
 [
     {
-        "image": "march.jpeg",
-        "title": "8. marta svētku vakars sievietēm",
-        "dateTime": "8. marts | 16:00",
-        "age": "Sievietēm",
-        "price": "18€",
-        "reserve": "Iepriekšējā pieteikšanās",
-        "description": "Silts, košs un svinīgs vakars, radīts īpaši sievietēm. Programmā muzikālais loto ar populāriem hitiem, jautra viktorīna, dejas, dziesmas un lielisks noskaņojums. Jūs sagaida cienasts, šampanietis, balvas, patīkami pārsteigumi un neaizmirstama svētku atmosfēra — ideāls veids, kā nosvinēt 8. martu!"
-    },
-    {
         "image": "bunker.jpeg",
         "title": "Spēle «Bunkurs»",
         "dateTime": "20. marts | 18:30",
