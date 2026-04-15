@@ -1,14 +1,5 @@
 [
     {
-        "image": "bunker.jpeg",
-        "title": "Spēle «Bunkurs»",
-        "dateTime": "20. marts | 18:30",
-        "age": "18+",
-        "price": "15€",
-        "reserve": "Iepriekšējā pieteikšanās",
-        "description": "Aizraujoša un spriedzes pilna spēle, kurā izdzīvos tas, kurš spēs pārliecināt! Pārbaudi savu loģiku, intuīciju un argumentēšanas prasmes, piedaloties misijās, stratēģiskās diskusijās un psiholoģiskos izaicinājumos. Vakara gaitā – mājīga atmosfēra, tēja, kafija"
-    },
-    {
         "image": "rarina-matematika.webp",
         "title": "Matemātika ar prieku",
         "dateTime": "Katru trešdienu | 18:30",
