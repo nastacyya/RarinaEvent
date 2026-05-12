@@ -12,19 +12,37 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 <body>
-    <div id="header_div"></div>
+    <header id="header"></header>
 
     <div class="hero_image">
-        <div class="hero_image_block">
-            <h1 data-i18n="comfort_place">Komforta vieta Jūsu svinībām un atpūtai!</h1>
-            <p data-i18n="birthday_party">Dzimšanas dienu svinības, tematiskās ballītes, meistarklases, radošas nodarbības, māmiņu tikšanos un kopā būšana.</p>
-            <button type="button" id="events-btn" data-i18n="see_events">Apskatīt pasākumus</button>
-        </div>
-        <div class="hero_image_photo">
-            <img id="photo" src="assets/img/gallery/_DSC6192.jpg" alt="Rarina Event image">
-        </div>
+
+
+            <div class="hero_image_block">
+                <h1 data-i18n="comfort_place">Komforta vieta Jūsu svinībām un atpūtai!</h1>
+                <p data-i18n="birthday_party">Dzimšanas dienu svinības, tematiskās ballītes, meistarklases, radošas nodarbības, māmiņu tikšanos un kopā būšana.</p>
+                <button type="button" id="events-btn" data-i18n="see_events">Apskatīt pasākumus</button>
+            </div>
+            
+
+            <div class="hero_image_photo">
+                <video 
+                    id="hero-video"
+                    muted
+                    loop
+                    playsinline
+                    preload="none"
+                    poster="assets/img/gallery/_DSC6192.jpg"
+                >
+                    <source 
+                        id="hero-video-source" 
+                        src="/assets/videos/hero-lv.mp4" 
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
         
     </div>
+        
 
     <div class="about_us">
         <h2 data-i18n="about_us">Par mums</h2>
@@ -80,8 +98,8 @@
       </div>
     
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2178.3663012525144!2d24.180094577114566!3d56.90825037353379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed3cbbf1d33c1%3A0x8e6732b5ac7c5e86!2sBumbuistaba!5e0!3m2!1sru!2slv!4v1747484260291!5m2!1sru!2slv" width="100%" height="450" style="border:0; margin-bottom: -8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" alt="Google Maps"></iframe>
-   
-    <div id="footer_div"></div>
+
+    <footer id="footer_div"></footer>
 
     <script type="module" src="/assets/js/homepage.js"></script>
 </body>

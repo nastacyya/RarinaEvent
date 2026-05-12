@@ -1,7 +1,7 @@
 export async function loadHeader() {
     const response = await fetch('/assets/partials/header.html');
     const data = await response.text();
-    document.getElementById('header_div').innerHTML = data;
+    document.getElementById('header').innerHTML = data;
     
     // Set up language switch buttons
     ['lv', 'ru', 'en'].forEach(lang => {
@@ -77,7 +77,7 @@ export async function loadFooter() {
     document.getElementById('footer_div').innerHTML = data;
 
     const contactsHeader = document.getElementById("contacts");
-    const foooter = document.getElementById('footer_div');
+    const footer = document.getElementById('footer_div');
 
     contactsHeader.addEventListener("click", (e) => {
         e.preventDefault();
@@ -85,7 +85,7 @@ export async function loadFooter() {
         if (window.innerWidth <= 576 && sidebar && sidebar.classList.contains("active")) {
             hideSidebar();
         }
-        foooter.scrollIntoView();
+        footer.scrollIntoView();
     })
 
     if(window.innerWidth <= 768){
@@ -140,4 +140,32 @@ export function updateContent(data) {
         }
     });
     
+}
+
+export function updateHeroVideo(lang) {
+    const video = document.getElementById("hero-video");
+    const source = document.getElementById("hero-video-source");
+
+    if (!video || !source) return;
+
+    const videos = {
+        lv: "/assets/videos/hero-lv.mp4",
+        ru: "/assets/videos/hero-ru.mp4",
+        en: "/assets/videos/hero-lv.mp4" // fallback
+    };
+
+    const newSrc = videos[lang] || videos.lv;
+
+    if (source.getAttribute("src") !== newSrc) {
+        const wasPlaying = !video.paused;
+
+        source.setAttribute("src", newSrc);
+        video.load();
+
+        if (wasPlaying) {
+            video.play().catch(error => {
+                console.log("Video autoplay blocked:", error);
+            });
+        }
+    }
 }

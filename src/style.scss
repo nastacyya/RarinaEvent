@@ -62,9 +62,8 @@ header {
     z-index: 1;
     background-color: $bg-primary;
     height: 80px;
-    @include flex-row();
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    justify-content: center;
     position: fixed;
     top:0;
     width: 100%;
@@ -76,6 +75,14 @@ header {
     @include respond(sm) {
         height: 50px;  
     } 
+
+    #header_div {
+        width: 100%;
+        max-width: 1222px;
+        @include flex-row();
+        align-items: center;
+        justify-content: space-between; 
+    }
 
     img {
         height: 50px;
@@ -222,9 +229,16 @@ header {
 .hero_image {
     @include flex-center();
     flex-direction: row;
-    height: 100%;
+    height: 95%;
     background-color: $bg-secondary;
     padding-top: 80px;
+    max-height: 1000px;
+    overflow: hidden;
+
+    @media (min-width: 1223px) {
+        justify-content: flex-end;
+    }
+
     @include respond(xl) {
         height: 600px;  
     } 
@@ -240,9 +254,14 @@ header {
     &_block {
         @include flex-col();
         background-color: $bg-secondary;
-        flex: 0.7;
+        flex: 1;
         padding: 0px 70px;
         color: #3e3e3e;
+
+        @media (min-width: 1223px) {
+            max-width: 611px;
+        }
+
         @include respond(md) {
             padding: 0 40px;
         } 
@@ -331,17 +350,22 @@ header {
 
     &_photo{
         display: flex;
-        flex: 1;
-        justify-content: center;
+        justify-content: right;
         height: 100%;
 
-        img {
-            display: flex;
-            flex: 1;
-            max-width: 100%;
-            height: 100%;
-            object-position: center;
-            object-fit: cover;
+        @media (min-width: 1223px) {
+            flex: 0 0 50vw;
+            width: 50vw;
+            max-width: 50vw;
+        }
+
+        video {
+            @media (min-width: 1223px) {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
         }
     }
 
@@ -537,12 +561,16 @@ header {
 
 .description {
     @include flex-row();
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     color: $bg-primary;
     height: auto;
     background-color: $bg-thirdly;
+
+    @media (max-width: 375px) { 
+        flex-direction: column-reverse; 
+    }
 
     &_image{
         margin-left: 30px;
@@ -586,12 +614,22 @@ header {
         }
         @include respond(sm) {
             font-size: 8px; 
-            padding-right: 15px;
+            padding-right: 0px;
             margin: 30px 0 30px -25px;
+        }
+
+        @media (max-width: 375px) { 
+            width: 100%;
+            margin: 30px 0 0px 0px;
         }
 
         ul {
             list-style-type: circle;
+
+            @media (max-width: 375px) { 
+                padding-left: 26px;
+                padding-right: 10px;
+            }
 
             p {
                 font-size: 30px;
@@ -611,6 +649,10 @@ header {
                 @include respond(sm) {
                     font-size: 14px; 
                     padding-bottom: 10px;
+                    padding-right: 15px;
+                }
+                @media (max-width: 375px) { 
+                    margin-left: 0px;
                 }
             }
 
@@ -848,6 +890,7 @@ header {
         @include flex-col();
         justify-content: center;
         padding: 40px 70px;
+        max-width: 1222px;
         @include respond(md) {
             padding: 30px 0;
             width: 80%;
@@ -1216,6 +1259,7 @@ footer {
     
     .footer_div {
         width: 100%;
+        max-width: 1222px;
         @include flex-row();
         color: white;
         justify-content: space-between;
@@ -1225,7 +1269,7 @@ footer {
             padding: 30px;  
         } 
         @include respond(sm) { 
-            padding: 20px 30px;  
+            padding: 20px;  
         } 
 
         h1 {
@@ -1618,6 +1662,7 @@ iframe {
         font-weight: 400;
         width: 80%;
         text-align: center;
+        max-width: 1222px;
         @include respond(lg) {
             font-size: 20px;
         }
@@ -1641,6 +1686,7 @@ iframe {
         box-shadow: 0px 0px 20px 10px rgb(0, 0, 0, 0.2);
         border-radius: 23px;
         border: 3px solid $dark-pink;
+        max-width: 1222px;
         @include respond(sm) {
             width: 85%;
             border-radius: 13px;

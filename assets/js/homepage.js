@@ -1,4 +1,4 @@
-import { loadHeader, loadFooter, fetchLanguageData, updateContent } from './common.js';
+import { loadHeader, loadFooter, fetchLanguageData, updateContent, updateHeroVideo } from './common.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadHeader();
@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'lv';
     const langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
+    updateHeroVideo(userPreferredLanguage);
 
     const languageHTML = document.getElementById(userPreferredLanguage);
     if (languageHTML) {
@@ -18,6 +19,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('about_us').style.color = "#AFDED9";
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("hero-video");
+
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    video.play().catch(function (error) {
+                        console.log("Video autoplay was blocked:", error);
+                    });
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        {
+            threshold: 0.4
+        }
+    );
+
+    observer.observe(video);
+});
 
 // Display images in carousel
 const carousel = document.querySelector('.carousel_images');
