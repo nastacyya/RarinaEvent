@@ -350,8 +350,8 @@ header {
 
     &_photo{
         display: flex;
-        justify-content: right;
         height: 100%;
+        flex: 1;
 
         @media (min-width: 1223px) {
             flex: 0 0 50vw;
@@ -360,10 +360,10 @@ header {
         }
 
         video {
+             width: 100%;
+             object-fit: cover;
             @media (min-width: 1223px) {
-                width: 100%;
                 height: 100%;
-                object-fit: cover;
                 display: block;
             }
         }
@@ -628,7 +628,9 @@ header {
 
             @media (max-width: 375px) { 
                 padding-left: 26px;
-                padding-right: 10px;
+            }
+            @include respond(sm) {
+                padding-right: 15px;
             }
 
             p {
