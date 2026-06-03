@@ -1398,6 +1398,7 @@ iframe {
     @include flex-col();
     background-color: $bg-thirdly;
     padding-top: 80px;
+    padding-bottom: 60px;
     justify-content: flex-start;
     align-items: center;
     min-height: 80vh;
@@ -1407,6 +1408,7 @@ iframe {
     }
     @include respond(sm) {
         padding-top: 50px;
+        padding-bottom: 30px;
     }
 
     #sets-title {
@@ -1660,7 +1662,7 @@ iframe {
     #addition {
         font-size: 24px;
         color: $bg-primary;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
         font-weight: 400;
         width: 80%;
         text-align: center;
@@ -1672,9 +1674,52 @@ iframe {
             font-size: 18px;
         }
         @include respond(sm) {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 14px;
             width: 85%;
+        }
+    }
+
+    .note_div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 3px solid rgb(234, 88, 88);
+        border-radius: 23px;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 40px;
+        gap: 30px;
+        padding: 30px;
+        max-width: 1080px;
+        margin-bottom: 30px;
+
+        @include respond(sm) {
+            flex-direction: column;
+            gap: 15px;
+            padding: 25px;
+        }
+
+        img {
+            max-width: 50px;
+            height: auto;
+            object-fit: contain;
+            @include respond(sm) {
+               max-width: 40px;
+            }   
+        }
+
+        #note {
+            color: #3e3e3e;
+            text-align: left;
+            font-size: 20px;
+
+            @include respond(md) {
+                font-size: 16px;
+            }
+            @include respond(sm) {
+                font-size: 12px;
+                text-align: center;
+            }
         }
     }
     
@@ -1787,8 +1832,11 @@ iframe {
 
 .desc_text {
     color: #FA5A76;
-    font-size: 16px;
+    font-size: 18px;
     padding: 20px;
     text-align: center;
     max-width: 800px;
+    @include respond(sm) {
+        font-size: 16px;
+    }
 }
